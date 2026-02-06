@@ -42,12 +42,57 @@ student-performance-prediction/
 git clone https://github.com/karishmaaraj/student-performance-prediction.git
 cd student-performance-prediction
 
+2️⃣ Install dependencies
 pip install -r requirements.txt
 
+3️⃣ Train the Machine Learning model
 python src/train.py
 
+4️⃣ Run prediction script
 python src/predict.py
 
+5️⃣ Start the Flask application
 python app.py
+
+Open your browser and go to:
+http://127.0.0.1:5000/
+
+## 🔌 API Usage Example
+
+### Endpoint
+```
+POST /predict
+```
+
+### Sample Request (JSON)
+```json
+{
+  "study_hours": 6,
+  "attendance": 85,
+  "previous_score": 70
+}
+```
+
+### Sample Response
+```json
+{
+  "predicted_score": 78.5
+}
+```
+
+### cURL Command
+```bash
+curl -X POST http://127.0.0.1:5000/predict \
+-H "Content-Type: application/json" \
+-d '{"study_hours":6,"attendance":85,"previous_score":70}'
+```
+
+
+
+
+
+
+
+
 
 
